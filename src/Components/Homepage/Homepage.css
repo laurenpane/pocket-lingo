@@ -1,0 +1,17 @@
+.homepage {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(1fr);
+  align-content: center;
+}
+
+img {
+  width: 50%;
+}
+
+.flag-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+}
