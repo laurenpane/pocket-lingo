@@ -19,7 +19,7 @@ import DisplayLanguageGallery from "../LanguageGallery/DisplayLanguageGallery.js
 
 export default function Homepage() {
   const [langs, setLangs] = useState([]);
-  fetch("/langs", {
+  fetch("/LanguageGallery", {
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
