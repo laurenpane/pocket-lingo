@@ -1,4 +1,5 @@
 import React from "react";
+// import { Router, Switch, Route } from "react-router";
 import "./App.css";
 import Homepage from "./Components/Homepage/Homepage.js";
 
@@ -10,6 +11,11 @@ function App() {
         rel="stylesheet"
       ></link>
       <Homepage />
+      {/* <Router>
+        <Switch>
+          <Route exact path="/" component={Homepage} />
+        </Switch>
+      </Router> */}
     </div>
   );
 }
