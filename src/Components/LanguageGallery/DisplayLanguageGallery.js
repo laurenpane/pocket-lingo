@@ -1,9 +1,11 @@
-import React, { Link } from "react";
+import React from "react";
+import "./LanguageGallery.css";
 // import { Link } from "react-router";
 
 export default function DisplayLanguageGallery(props) {
   return (
-    <Link to={`/${props.id}`} className="lang">
+    // <Link to={`/${props.id}`} className="lang">
+    <>
       <img
         src={props.image}
         alt={props.name}
@@ -13,6 +15,6 @@ export default function DisplayLanguageGallery(props) {
       <div className="overlay">
         <h2 className="showName">{props.name}</h2>
       </div>
-    </Link>
+    </>
   );
 }
