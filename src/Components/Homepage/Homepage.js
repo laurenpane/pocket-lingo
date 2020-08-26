@@ -6,8 +6,8 @@ import DisplayLanguageGallery from "../LanguageGallery/DisplayLanguageGallery.js
 export default function Homepage() {
   return (
     <div className="homepage">
-      <h2 className="homepage-title">Welcome to Pocket Lingo</h2>
-      <h3 className="lang-select">Select a language</h3>
+      <h1 className="homepage-title">Welcome to Pocket Lingo</h1>
+      <h2 className="lang-select">Select a language</h2>
       <div className="lang-container">
         {LanguageGallery().map((lang) => (
           <DisplayLanguageGallery

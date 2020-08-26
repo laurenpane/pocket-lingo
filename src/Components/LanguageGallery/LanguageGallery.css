@@ -1,11 +1,17 @@
 img {
   width: 100%;
   border-radius: 30%;
+  justify-self: center;
 }
 
 .lang {
   position: relative;
 }
+
+/* .img-cont {
+  display: grid;
+  justify-items: center;
+} */
 
 .overlay {
   position: absolute;
@@ -27,3 +33,13 @@ img {
 .overlay:hover {
   opacity: 0.8;
 }
+
+/* @media only screen and (min-width: 600px) {
+  img {
+    width: 150%;
+  }
+
+  .overlay {
+    width: 150%;
+  }
+} */

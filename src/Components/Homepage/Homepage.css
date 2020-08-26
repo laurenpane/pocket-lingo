@@ -9,9 +9,16 @@
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
+  justify-content: center;
   align-items: center;
 }
 
 /* h2 {
   color: #d4f1f4;
 } */
+
+@media only screen and (min-width: 600px) {
+  .lang-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
