@@ -1,18 +1,51 @@
 img {
-  width: 10%;
+  width: 100%;
 }
 
-/* .item {
+.lang {
   position: relative;
 }
 
 .overlay {
   position: absolute;
-  opacity: 1;
+  opacity: 0.5;
   right: 0;
   bottom: 0;
+  left: 0;
+  /* -webkit-align-self: center; */
+  z-index: 0;
+  display: grid;
+  align-content: center;
+}
+
+.text {
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+/* .text {
+  color: black;
+  font-style: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  /* animation: bounce 1s; */
+/* opacity: 1;
+  align-self: center;
+} */
+
+/*.overlay {
+  font-size: 80px;
+  opacity: 0;
+  position: absolute;
+  right: 10%;
+  bottom: 1%;
   height: 20%;
   -webkit-align-self: center;
   align-self: center;
   z-index: 1;
+  width: 85%;
+  border-radius: 30%;
 } */

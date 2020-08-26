@@ -9,7 +9,7 @@ img {
   width: 50%;
 }
 
-.flag-grid {
+.lang-container {
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
