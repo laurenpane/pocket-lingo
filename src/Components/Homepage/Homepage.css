@@ -5,13 +5,13 @@
   align-content: center;
 }
 
-img {
-  width: 50%;
-}
-
 .lang-container {
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
   align-items: center;
 }
+
+/* h2 {
+  color: #d4f1f4;
+} */

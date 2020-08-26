@@ -7,6 +7,7 @@ export default function Homepage() {
   return (
     <div className="homepage">
       <h2 className="homepage-title">Welcome to Pocket Lingo</h2>
+      <h3 className="lang-select">Select a language</h3>
       <div className="lang-container">
         {LanguageGallery().map((lang) => (
           <DisplayLanguageGallery
