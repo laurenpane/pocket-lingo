@@ -1,7 +1,9 @@
 import React from "react";
-// import { Router, Switch, Route } from "react-router";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Homepage from "./Components/Homepage/Homepage.js";
+import English from "./Components/English/English.js";
+import German from "./Components/German/German.js";
 
 function App() {
   return (
@@ -10,12 +12,13 @@ function App() {
         href="https://fonts.googleapis.com/css2?family=Mandali&display=swap"
         rel="stylesheet"
       ></link>
-      <Homepage />
-      {/* <Router>
+      <Router>
         <Switch>
           <Route exact path="/" component={Homepage} />
+          <Route exact path="/german" component={German} />
+          <Route exact path="/english" component={English} />
         </Switch>
-      </Router> */}
+      </Router>
     </div>
   );
 }
