@@ -22,3 +22,8 @@
 // //     res.send(doc);
 // //   });
 // // });
+
+require("dotenv").config();
+
+const key = process.env.API_KEY;
+const url = process.env.API_URL;
