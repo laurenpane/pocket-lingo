@@ -6,9 +6,9 @@ const port = process.env.PORT || 5000;
 const path = require("path");
 require("dotenv").config();
 
-var MongoClient = require("mongodb").MongoClient;
+const MongoClient = require("mongodb").MongoClient;
 // var key = process.env.API_KEY;
-var url = process.env.MONGODB_URL;
+const url = process.env.MONGODB_URL;
 
 MongoClient.connect(url, (err, db) => {
   if (err) throw err;
