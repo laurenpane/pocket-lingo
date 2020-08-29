@@ -1,7 +1,7 @@
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/pocket-lingo");
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/pocket-lingo");
 
-const GermanQ = require("./germanQ");
+// const GermanQ = require("./germanQ");
 
-module.exports.GermanQ = GermanQ;
+// module.exports.GermanQ = GermanQ;

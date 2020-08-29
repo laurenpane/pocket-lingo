@@ -1,15 +1,15 @@
-const mongoose = require("mongoose"),
-  Schema = mongoose.Schema;
+// const mongoose = require("mongoose"),
+//   Schema = mongoose.Schema;
 
-const GermanQSchema = new Schema({
-  q: String,
-  difficulty: Number,
-  topic: String,
-});
+// const GermanQSchema = new Schema({
+//   q: String,
+//   difficulty: Number,
+//   topic: String,
+// });
 
-const GermanQ = mongoose.model("GermanQ", GermanQSchema);
+// const GermanQ = mongoose.model("GermanQ", GermanQSchema);
 
-module.exports = GermanQ;
+// module.exports = GermanQ;
 
 //When using Mongoose and models folder:
 // app.use(

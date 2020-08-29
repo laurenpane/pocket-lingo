@@ -23,7 +23,7 @@
 // //   });
 // // });
 
-require("dotenv").config();
+// require("dotenv").config();
 
-const key = process.env.API_KEY;
-const url = process.env.API_URL;
+// const key = process.env.API_KEY;
+// const url = process.env.API_URL;
