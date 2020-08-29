@@ -24,7 +24,7 @@ export default function German() {
   } else {
     return (
       <>
-        {Array.from(questions).map((question) => (
+        {questions.map((question) => (
           <div key={question._id}>
             <p>
               Question: {question.q} - Difficulty: {question.difficulty}
@@ -36,3 +36,31 @@ export default function German() {
     );
   }
 }
+
+//State version - test
+// export default class German extends React.Component {
+//   constructor() {
+//     super();
+//     this.state = { questions: [] };
+//   }
+
+//   componentDidMount() {
+//     fetch("/rest/questions")
+//       .then((response) => response.json())
+//       .then((questions) => this.setState({ questions }));
+//   }
+
+//   render() {
+//     return (
+//       <div className="gallery">
+//         {this.state.questions.length ? (
+//           this.state.questions.map((question) => {
+//             return <p key={question.q}>Question: {question.q}</p>;
+//           })
+//         ) : (
+//           <p>Page loading</p>
+//         )}
+//       </div>
+//     );
+//   }
+// }
