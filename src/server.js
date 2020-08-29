@@ -9,20 +9,30 @@ require("dotenv").config();
 const MongoClient = require("mongodb").MongoClient;
 // var key = process.env.API_KEY;
 const url = process.env.MONGODB_URL;
+const client = new MongoClient(url, { useUnifiedTopology: true });
 
-MongoClient.connect(url, (err, db) => {
+client.connect((err, db) => {
   if (err) throw err;
   var dbo = db.db("german");
-  dbo
-    .collection("questions")
-    .find({})
-    .toArray((err, result) => {
-      if (err) throw err;
-      console.log(result);
-      db.close();
-    });
-});
 
-app.listen(port, () => {
-  console.log(`API running on http://localhost:${port}`);
+  app.get("/rest/questions", (req, res) => {
+    dbo
+      .collection("questions")
+      .find({})
+      .toArray((err, result) => {
+        if (err) throw err;
+        res.send(result);
+        db.close();
+      });
+  });
+
+  app.use(express.static(path.join(__dirname, "../build")));
+
+  app.get("*", function (req, res) {
+    res.sendFile(path.join(__dirname, "../build/index.html"));
+  });
+
+  app.listen(port, () => {
+    console.log(`API running on http://localhost:${port}`);
+  });
 });
