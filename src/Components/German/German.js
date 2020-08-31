@@ -6,7 +6,7 @@ export default function German() {
   const [questionsLoaded, setQuestionsLoaded] = useState(false);
 
   useEffect(() => {
-    fetch("/rest/questions", {
+    fetch("/rest/Qs", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
