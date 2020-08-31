@@ -7,7 +7,7 @@ const qs = require("./Backend/Questions.js");
 // const assert = require('assert');
 require("dotenv").config();
 
-app.get("/rest/Qs", (req, res) => res.send(qs));
+// app.get("/rest/Qs", (req, res) => res.send(qs));
 
 const MongoClient = require("mongodb").MongoClient;
 // var key = process.env.API_KEY;

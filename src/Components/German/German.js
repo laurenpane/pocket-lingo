@@ -6,16 +6,12 @@ export default function German() {
   const [questionsLoaded, setQuestionsLoaded] = useState(false);
 
   useEffect(() => {
-    fetch("/rest/Qs", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
+    fetch("/rest/questions")
       .then((response) => response.json())
       .then((data) => {
         setQuestions(data);
         setQuestionsLoaded(true);
+        console.log(data);
       });
   }, []);
 
@@ -36,6 +32,14 @@ export default function German() {
     );
   }
 }
+
+// useEffect(() => {
+//   fetch("/rest/questions", {
+//     headers: {
+//       "Content-Type": "application/json",
+//       Accept: "application/json",
+//     },
+//   })
 
 //State version - test
 // export default class German extends React.Component {
