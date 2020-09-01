@@ -3,33 +3,33 @@ import "./German.css";
 
 export default function German() {
   const [questions, setQuestions] = useState([]);
-  const [questionsLoaded, setQuestionsLoaded] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    fetch("/rest/questions")
+    const url = "/rest/questions";
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    fetch(proxyurl + url)
       .then((response) => response.json())
       .then((data) => {
-        setQuestions(data);
-        setQuestionsLoaded(true);
         console.log(data);
+        setQuestions(data);
+        setLoaded(true);
       });
   }, []);
 
-  if (!questionsLoaded) {
+  if (!loaded) {
     return <div>Loading...</div>;
   } else {
-    return (
-      <>
-        {questions.map((question) => (
-          <div key={question._id}>
-            <p>
-              Question: {question.q} - Difficulty: {question.difficulty}
-            </p>
-            <hr />
-          </div>
-        ))}
-      </>
-    );
+    questions.map((question) => {
+      return (
+        <div key={question._id}>
+          <p>
+            Question: {question.q} - Difficulty: {question.difficulty}
+          </p>
+          <hr />
+        </div>
+      );
+    });
   }
 }
 
