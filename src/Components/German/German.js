@@ -6,15 +6,11 @@ export default function German() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    const url = "/rest/questions";
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    fetch(proxyurl + url)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setQuestions(data);
-        setLoaded(true);
-      });
+    const url = "http://localhost:5000/rest/questions/";
+    // const proxyurl = "https://warm-lowlands-71223.herokuapp.com/";
+    fetch(url)
+      .then((response) => response.text())
+      .then((data) => console.log(data));
   }, []);
 
   if (!loaded) {

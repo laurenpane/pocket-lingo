@@ -3,8 +3,8 @@ const bodyParser = require("body-parser");
 const app = express();
 const port = process.env.PORT || 5000;
 const path = require("path");
-const qs = require("./Backend/Questions.js");
-// const assert = require('assert');
+const qs = require("./Backend/GermanTest.js");
+const assert = require("assert");
 require("dotenv").config();
 
 // app.get("/rest/Qs", (req, res) => res.send(qs));
@@ -27,14 +27,15 @@ client.connect((err, db) => {
       });
   });
 
-  app.use(bodyParser.json());
-  app.use(bodyParser.urlencoded({ extended: true }));
+  app.get("/hi", (req, res) => res.send(`Backend running`));
+  // app.use(bodyParser.json());
+  // app.use(bodyParser.urlencoded({ extended: true }));
 
-  app.use(express.static(path.join(__dirname, "../build")));
+  // app.use(express.static(path.join(__dirname, "../build")));
 
-  app.get("*", function (req, res) {
-    res.sendFile(path.join(__dirname, "../build/index.html"));
-  });
+  // app.get("*", function (req, res) {
+  //   res.sendFile(path.join(__dirname, "../build/index.html"));
+  // });
 
   app.listen(port, () => {
     console.log(`API running on http://localhost:${port}`);
