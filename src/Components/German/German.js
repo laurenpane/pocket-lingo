@@ -9,25 +9,28 @@ export default function German() {
     const url = "http://localhost:5000/rest/questions/";
     // const proxyurl = "https://warm-lowlands-71223.herokuapp.com/";
     fetch(url)
-      .then((response) => response.text())
-      .then((data) => console.log(data));
+      .then((response) => response.json())
+      .then((data) =>
+        setQuestions(data)
+        // setLoaded(true);
+      );
   }, []);
 
-  if (!loaded) {
-    return <div>Loading...</div>;
-  } else {
-    questions.map((question) => {
-      return (
-        <div key={question._id}>
-          <p>
-            Question: {question.q} - Difficulty: {question.difficulty}
-          </p>
-          <hr />
-        </div>
-      );
-    });
-  }
+  // if (!loaded) {
+  //   return <div>Loading...</div>;
+  // } else {
+  return questions.map((question) => {
+    return (
+      <div key={question._id}>
+        <p>
+          Question: {question.q} - Difficulty: {question.difficulty}
+        </p>
+        <hr />
+      </div>
+    );
+  });
 }
+// }
 
 // useEffect(() => {
 //   fetch("/rest/questions", {
