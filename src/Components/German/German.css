@@ -1,4 +1,30 @@
 .question-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
+  grid-gap: 8%;
+  margin: 6%;
+  box-sizing: border-box;
+}
+
+.card {
+  background-color: white;
+  color: black;
+  padding: 2%;
+  box-sizing: border-box;
+  border-radius: 5%;
+  text-align: center;
+  display: grid;
+  align-items: center;
+}
+
+@media only screen and (min-width: 600px) {
+  .question-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .question-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

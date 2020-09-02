@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import germanFlag from "../../Images/German-flag.svg";
 import "./German.css";
 
 export default function German() {
@@ -17,26 +19,13 @@ export default function German() {
   //   return <div>Loading...</div>;
   // } else {
 
-  //Test
-  //   return questions.map((question) => {
-  //     return (
-  //       <div key={question._id} className="question-grid">
-  //         <p>
-  //           Question: {question.q} - Difficulty: {question.difficulty}
-  //         </p>
-  //       </div>
-  //     );
-  //   });
-  // }
-
   return (
     <div className="question-grid">
+      {/* <img src={germanFlag} alt="german-flag" className="german-flag" /> */}
       {questions.map((question) => {
         return (
           <div key={question._id}>
-            <p>
-              Question: {question.q} - Difficulty: {question.difficulty}
-            </p>
+            <p className="card">{question.q}</p>
           </div>
         );
       })}
