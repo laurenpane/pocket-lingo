@@ -3,35 +3,47 @@ import "./German.css";
 
 export default function German() {
   const [questions, setQuestions] = useState([]);
-  const [loaded, setLoaded] = useState(false);
+  // const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     const url = "http://localhost:5000/rest/questions/";
     // const proxyurl = "https://warm-lowlands-71223.herokuapp.com/";
     fetch(url)
       .then((response) => response.json())
-      .then((data) =>
-        setQuestions(data)
-        // setLoaded(true);
-      );
+      .then((data) => setQuestions(data));
   }, []);
 
   // if (!loaded) {
   //   return <div>Loading...</div>;
   // } else {
-  return questions.map((question) => {
-    return (
-      <div key={question._id}>
-        <p>
-          Question: {question.q} - Difficulty: {question.difficulty}
-        </p>
-        <hr />
-      </div>
-    );
-  });
-}
-// }
 
+  //Test
+  //   return questions.map((question) => {
+  //     return (
+  //       <div key={question._id} className="question-grid">
+  //         <p>
+  //           Question: {question.q} - Difficulty: {question.difficulty}
+  //         </p>
+  //       </div>
+  //     );
+  //   });
+  // }
+
+  return (
+    <div className="question-grid">
+      {questions.map((question) => {
+        return (
+          <div key={question._id}>
+            <p>
+              Question: {question.q} - Difficulty: {question.difficulty}
+            </p>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+//HEADERS
 // useEffect(() => {
 //   fetch("/rest/questions", {
 //     headers: {
