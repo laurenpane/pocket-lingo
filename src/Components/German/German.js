@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import germanFlag from "../../Images/German-flag.svg";
+// import { Link } from "react-router-dom";
+// import germanFlag from "../../Images/German-flag.svg";
 import "./German.css";
 
 export default function German() {
@@ -8,7 +8,7 @@ export default function German() {
   // const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    const url = "http://localhost:5000/rest/questions/";
+    const url = "/rest/questions/";
     // const proxyurl = "https://warm-lowlands-71223.herokuapp.com/";
     fetch(url)
       .then((response) => response.json())

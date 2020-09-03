@@ -23,7 +23,7 @@ client.connect((err, db) => {
       .toArray((err, result) => {
         if (err) throw err;
         res.send(result);
-        db.close();
+        // db.close();
       });
   });
 
