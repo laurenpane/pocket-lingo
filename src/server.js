@@ -16,6 +16,9 @@ const client = new MongoClient(url, { useUnifiedTopology: true });
 client.connect((err, db) => {
   if (err) throw err;
   var dbo = db.db("german");
+
+  app.use(express.static(path.join(__dirname, "../build")));
+
   app.get("/rest/questions", (req, res) => {
     dbo
       .collection("questions")
@@ -30,8 +33,6 @@ client.connect((err, db) => {
   app.get("/", (req, res) => res.send(`Backend running`));
   // app.use(bodyParser.json());
   // app.use(bodyParser.urlencoded({ extended: true }));
-
-  app.use(express.static(path.join(__dirname, "../build")));
 
   app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "../build/index.html"));
