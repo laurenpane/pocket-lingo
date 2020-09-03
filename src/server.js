@@ -30,7 +30,7 @@ client.connect((err, db) => {
       });
   });
 
-  app.get("/", (req, res) => res.send(`Backend running`));
+  // app.get("/", (req, res) => res.send(`Backend running`));
   // app.use(bodyParser.json());
   // app.use(bodyParser.urlencoded({ extended: true }));
 
