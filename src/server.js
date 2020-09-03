@@ -1,5 +1,5 @@
 const express = require("express");
-const bodyParser = require("body-parser");
+// const bodyParser = require("body-parser");
 const app = express();
 const port = process.env.PORT || 5000;
 const path = require("path");
@@ -17,8 +17,6 @@ client.connect((err, db) => {
   if (err) throw err;
   var dbo = db.db("german");
 
-  app.use(express.static(path.join(__dirname, "../build")));
-
   app.get("/rest/questions", (req, res) => {
     dbo
       .collection("questions")
@@ -29,6 +27,8 @@ client.connect((err, db) => {
         // db.close();
       });
   });
+
+  app.use(express.static(path.join(__dirname, "../build")));
 
   // app.get("/", (req, res) => res.send(`Backend running`));
   // app.use(bodyParser.json());
