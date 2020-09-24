@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 5000;
 const path = require("path");
 const wordOfDay = process.env.API_KEY;
 
-app.get("/english/WordOfDay", async (req, res) => {
+app.get("/rest/english/WordOfDay", async (req, res) => {
   const wordOfDay = process.env.API_KEY;
   const fetch_res = await fetch(wordOfDay);
   const json = await fetch_res.json();

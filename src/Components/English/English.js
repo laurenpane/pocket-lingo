@@ -2,16 +2,29 @@ import React, { useState, useEffect } from "react";
 import "./English.css";
 
 export default function English() {
-  const [word, setWord] = useState(undefined);
-  const API_FULL_URL = `${process.env.API_URL}${process.env.API_KEY}`;
+  const [word, setWord] = useState([]);
   useEffect(() => {
-    async function getRandomMeal() {
-      const response = await fetch(API_FULL_URL);
-      const data = await response.json();
-      setWord(data);
-      console.log(word);
-    }
-    getRandomMeal();
+    // const proxyurl = "https://warm-lowlands-71223.herokuapp.com/";
+    const url = "/rest/english/WordOfDay";
+    fetch(url, {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => setWord(data))
+      .then((data) => console.log(data));
   }, []);
-  return <div className="english">English</div>;
+  return (
+    <div className="question-grid">
+      {word.map((word) => {
+        return (
+          <div key={word._id}>
+            <p className="card">{word.word}</p>
+          </div>
+        );
+      })}
+    </div>
+  );
 }

@@ -4,7 +4,7 @@ module.exports = function (app) {
   app.use(
     "/rest/questions",
     createProxyMiddleware({
-      target: "http://[::1]:3000",
+      target: "http://[::1]:5000",
       changeOrigin: true,
     })
   );
