@@ -1,9 +1,18 @@
 require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
+const fetch = require("node-fetch");
 const app = express();
 const PORT = process.env.PORT || 5000;
 const path = require("path");
+const wordOfDay = process.env.API_KEY;
+
+app.get("/english/WordOfDay", async (req, res) => {
+  const wordOfDay = process.env.API_KEY;
+  const fetch_res = await fetch(wordOfDay);
+  const json = await fetch_res.json();
+  res.json(json);
+});
 
 const MongoClient = require("mongodb").MongoClient;
 // var key = process.env.API_KEY;
